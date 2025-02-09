@@ -1,27 +1,42 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-</template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default defineComponent({
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-});
+<script lang="ts" setup>
+import { Autocomplete, Notifications } from "./components";
 </script>
 
+<template>
+  <Autocomplete class="autocomplete" />
+  <Notifications />
+</template>
+
 <style>
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Goudy Bookletter 1911", sans-serif;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  height: 100vh;
+}
+
+.autocomplete {
+  width: 50%;
 }
 </style>
